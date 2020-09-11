@@ -155,24 +155,9 @@
     <article id="post-pythonGUI" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/19/pythonGUI/">python GUI制作显示多张图片的界面</a>
-    </h1>
-  
-
-        
-        <a href="/2020/08/19/pythonGUI/" class="archive-article-date">
-  	<time datetime="2020-08-19T12:59:29.170Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-19</time>
-</a>
-        
-      </header>
-    
     <div class="article-entry" itemprop="articleBody">
       
-        <p>受到朋友邀请，需要写一个python GUI，功能是“点击按钮，能显示出某几张图片”。因我以前用tk库制作过一个地图导航界面，因此自我感觉朋友的要求很简单，于是云淡风轻的接受了朋友的请求。但是等操作起来，才发现满满的坑。</p>
+        <h2 id="python-GUI制作显示多张图片的界面"><a href="#python-GUI制作显示多张图片的界面" class="headerlink" title="#python GUI制作显示多张图片的界面"></a>#python GUI制作显示多张图片的界面</h2><p>受到朋友邀请，需要写一个python GUI，功能是“点击按钮，能显示出某几张图片”。因我以前用tk库制作过一个地图导航界面，因此自我感觉朋友的要求很简单，于是云淡风轻的接受了朋友的请求。但是等操作起来，才发现满满的坑。</p>
 <p>我一共使用了两种方法，仅成功了一种，另一种目前无法解决，留待以后思考</p>
 <blockquote>
 <ul>
@@ -198,7 +183,7 @@ button_img = tk.Button(root, command = sp, text=&#39;带图按钮&#39;)
 button_img.pack()
 mainloop()</code></pre>
 <p>这里有个大坑，图片无法在新的界面显示，目前尚未解决，留待以后解决。上述代码效果如下。</p>
-<p><img src="./image/second.png"></p>
+<p><img src="https://codelifepicture.oss-cn-beijing.aliyuncs.com/python%E5%9B%BE%E7%89%87%E8%BE%93%E5%87%BA%E5%9B%BE%E5%BA%8A/second.png"></p>
 <pre><code>点击按钮后，图片无法显示在新页面，因此我退而求其次，不产生新界面，仅在原界面用Label显示图片
 root = tk.Tk()
 root.title(&#39;应用程序窗口&#39;)  # 窗口标题
@@ -219,9 +204,10 @@ def sp():
 button_img = tk.Button(root, command = sp, text=&#39;带图按钮&#39;)
 button_img.grid(rows = 1,columns = 1)
 mainloop()</code></pre>
-<p><img src="./image/third.png"></p>
+<p><img src="https://codelifepicture.oss-cn-beijing.aliyuncs.com/python%E5%9B%BE%E7%89%87%E8%BE%93%E5%87%BA%E5%9B%BE%E5%BA%8A/third.png"></p>
 <pre><code>不出意外的出现了坑，第一张图片无法显示，仅能显示第二张，这里猜测是循环过程中img_png参数被改变，导致仅能显示最后一张图片。</code></pre>
-<h2 id="二、利用matlab-pyplot函数显示"><a href="#二、利用matlab-pyplot函数显示" class="headerlink" title="二、利用matlab pyplot函数显示"></a>二、利用matlab pyplot函数显示</h2><p>前面的方法碰壁后，我决定使用matlab库里的pyplot函数显示图片</p>
+<p>##二、利用matlab pyplot函数显示</p>
+<p>前面的方法碰壁后，我决定使用matlab库里的pyplot函数显示图片</p>
 <pre><code>import tkinter as tk
 import matplotlib.pyplot as plt
 import matplotlib.image as mping
@@ -252,9 +238,9 @@ b.grid(row=1,column=1)   ##这里表示这个按钮放在第1行第1列，下面
 root.mainloop()</code></pre>
 <hr>
 <pre><code>点击“显示图片“后成功显示两张图片！！！</code></pre>
-<img src="./image/success.png" alt="图片替换文本" width="700" height="300" align="bottom" />
-![IO框图](https://note.youdao.com/yws/api/personal/file/WEB7e32d3ada6791bc2bf26616fc8b8ad25?method=download&shareKey=a928e80bf4548e74ee37e7a6aa46cfe2)
-![I框图](https://note.youdao.com/yws/api/personal/file/861DB49FB3374A4E9D3DCE0F5C512C75?method=download&shareKey=845897fa9221ced473f6f81f6c61c221)
+<img src="https://codelifepicture.oss-cn-beijing.aliyuncs.com/python%E5%9B%BE%E7%89%87%E8%BE%93%E5%87%BA%E5%9B%BE%E5%BA%8A/success.png" alt="图片替换文本" width="500" height="300" align="bottom" />
+
+
       
 
       
