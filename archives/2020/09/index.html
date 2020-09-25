@@ -6,23 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>Archives: 2020/9 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="python GUI制作显示多张图片的界面 受到朋友邀请，需要写一个python GUI，功能是“点击按钮，能显示出某几张图片”。因我以前用tk库制作过一个地图导航界面，因此自我感觉朋友的要求很简单，于是云淡风轻的接受了朋友的请求。但是等操作起来，才发现满满的坑。 我一共使用了两种方法，仅成功了一种，另一种目前无法解决，留待以后思考   点击按钮后生成新界面，在新界面使用Label标签显示图片（失">
-<meta property="og:type" content="article">
+  <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/2020/08/19/pythonGUI/index.html">
+<meta property="og:url" content="http://yoursite.com/archives/2020/09/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="python GUI制作显示多张图片的界面 受到朋友邀请，需要写一个python GUI，功能是“点击按钮，能显示出某几张图片”。因我以前用tk库制作过一个地图导航界面，因此自我感觉朋友的要求很简单，于是云淡风轻的接受了朋友的请求。但是等操作起来，才发现满满的坑。 我一共使用了两种方法，仅成功了一种，另一种目前无法解决，留待以后思考   点击按钮后生成新界面，在新界面使用Label标签显示图片（失">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://codelifepicture.oss-cn-beijing.aliyuncs.com/python%E5%9B%BE%E7%89%87%E8%BE%93%E5%87%BA%E5%9B%BE%E5%BA%8A/second.png">
-<meta property="og:image" content="https://codelifepicture.oss-cn-beijing.aliyuncs.com/python%E5%9B%BE%E7%89%87%E8%BE%93%E5%87%BA%E5%9B%BE%E5%BA%8A/third.png">
-<meta property="og:image" content="https://codelifepicture.oss-cn-beijing.aliyuncs.com/python%E5%9B%BE%E7%89%87%E8%BE%93%E5%87%BA%E5%9B%BE%E5%BA%8A/success.png">
-<meta property="article:published_time" content="2020-08-19T12:59:29.170Z">
-<meta property="article:modified_time" content="2020-09-11T08:34:22.327Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://codelifepicture.oss-cn-beijing.aliyuncs.com/python%E5%9B%BE%E7%89%87%E8%BE%93%E5%87%BA%E5%9B%BE%E5%BA%8A/second.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -158,236 +150,43 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-pythonGUI" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
+            
+  
+  
     
-    <div class="article-entry" itemprop="articleBody">
+    
       
-        <h1 id="python-GUI制作显示多张图片的界面"><a href="#python-GUI制作显示多张图片的界面" class="headerlink" title="python GUI制作显示多张图片的界面"></a>python GUI制作显示多张图片的界面</h1><hr>
-<p>受到朋友邀请，需要写一个python GUI，功能是“点击按钮，能显示出某几张图片”。因我以前用tk库制作过一个地图导航界面，因此自我感觉朋友的要求很简单，于是云淡风轻的接受了朋友的请求。但是等操作起来，才发现满满的坑。</p>
-<p>我一共使用了两种方法，仅成功了一种，另一种目前无法解决，留待以后思考</p>
-<blockquote>
-<ul>
-<li>点击按钮后生成新界面，在新界面使用Label标签显示图片（失败）</li>
-<li>点击按钮后利用matlab pyplot函数显示图片（成功）</li>
-</ul>
-</blockquote>
-<h2 id="一、产生新界面，并用Label显示图片"><a href="#一、产生新界面，并用Label显示图片" class="headerlink" title="一、产生新界面，并用Label显示图片"></a>一、产生新界面，并用Label显示图片</h2><pre><code>由于Label组件仅支持git格式图片，因此需要使用PIL库对图片先进行处理。
-img_open = Image.open(&#39;./xi.jpg&#39;)
-img_png = ImageTk.PhotoImage(img_open)</code></pre>
-<p>全部代码如下：</p>
-<pre><code>import tkinter as tk
-from tkinter import *
-from PIL import Image, ImageTk
-root = tk.Tk()
-root.title(&#39;应用程序窗口&#39;)  # 窗口标题
-root.geometry(&#39;300x200&#39;)  #窗口大小
-img_open = Image.open(&#39;./xi.jpg&#39;)
-img_png = ImageTk.PhotoImage(img_open)
-def sp():
-    root2 = tk.Tk()
-    root2.title(&#39;图片显示窗口&#39;)
-    root2.geometry(&#39;300x200&#39;)
-    label_text = tk.Label(root2, image=img_png)
-    label_text.pack()
-button_img = tk.Button(root, command = sp, text=&#39;带图按钮&#39;)
-button_img.pack()
-mainloop()</code></pre>
-<p>这里有个大坑，图片无法在新的界面显示，目前尚未解决，留待以后解决。上述代码效果如下。</p>
-<p><img src="https://codelifepicture.oss-cn-beijing.aliyuncs.com/python%E5%9B%BE%E7%89%87%E8%BE%93%E5%87%BA%E5%9B%BE%E5%BA%8A/second.png"></p>
-<pre><code>点击按钮后，图片无法显示在新页面，因此我退而求其次，不产生新界面，仅在原界面用Label显示图片
-root = tk.Tk()
-root.title(&#39;应用程序窗口&#39;)  # 窗口标题
-root.geometry(&#39;300x200&#39;)  #窗口大小
-piclist = [&quot;./han.jpg&quot;, &quot;./rose.jpg&quot;]
-pic_num=len(piclist)
-lab_list=[]
-def sp():
-    for i in range(pic_num):
-        img_open = Image.open(piclist[i])
-        img_open = img_open.resize((100, 100), Image.ANTIALIAS)
-        global img_png
-        img_png = ImageTk.PhotoImage(img_open)
-        lab = tk.Label(root,image=img_png)
-        lab_list.append(lab)
-    lab_list[0].grid(rows=2,columns=1)
-    lab_list[1].grid(rows=2,columns=2)
-button_img = tk.Button(root, command = sp, text=&#39;带图按钮&#39;)
-button_img.grid(rows = 1,columns = 1)
-mainloop()</code></pre>
-<p><img src="https://codelifepicture.oss-cn-beijing.aliyuncs.com/python%E5%9B%BE%E7%89%87%E8%BE%93%E5%87%BA%E5%9B%BE%E5%BA%8A/third.png"></p>
-<pre><code>不出意外的出现了坑，第一张图片无法显示，仅能显示第二张，这里猜测是循环过程中img_png参数被改变，导致仅能显示最后一张图片。</code></pre>
-<h2 id="二、利用matlab-pyplot函数显示"><a href="#二、利用matlab-pyplot函数显示" class="headerlink" title="二、利用matlab pyplot函数显示"></a>二、利用matlab pyplot函数显示</h2><p>前面的方法碰壁后，我决定使用matlab库里的pyplot函数显示图片</p>
-<pre><code>import tkinter as tk
-import matplotlib.pyplot as plt
-import matplotlib.image as mping
-from PIL import Image, ImageTk
-root = tk.Tk()
-##设置界面大小
-root.geometry(&#39;300x200&#39;)
-
-##下面两行解决figure标题汉字显示问题
-plt.rcParams[&#39;font.sans-serif&#39;]=[&#39;SimHei&#39;]
-plt.rcParams[&#39;axes.unicode_minus&#39;] = False
-def showpicture():
-    ##图片地址
-    pic_names = [r&quot;C:/Users/ASUS/Desktop/训练营/DAY1/day1/han.jpg&quot;,r&quot;C:/Users/ASUS/Desktop/训练营/DAY1/day1/xi.jpg&quot;]
-    for i in range(2):
-        img = mping.imread(pic_names[i])
-        # 由于这里subplot的设置，最多只能显示3行4列共12张图片
-        plt.subplot(3, 4, i + 1)
-        plt.imshow(img)
-        plt.title(&quot;第&quot;+str(i)+&quot;张图片&quot;,fontsize=8)
-        plt.xticks([])
-        plt.yticks([])
-    plt.show()
-a = tk.Label(root,text=&quot;某某系统&quot;,width=10,height=5,font=20)##font调字体width、height调宽高，下面的按钮是类似的
-a.grid(row = 0,column=1) ####这里表示这个标签放在第0行第1列
-b = tk.Button(root,text=&quot;显示图片&quot;,command=showpicture)
-b.grid(row=1,column=1)   ##这里表示这个按钮放在第1行第1列，下面的以此类推
-root.mainloop()</code></pre>
-<hr>
-<pre><code>点击“显示图片“后成功显示两张图片！！！</code></pre>
-<img src="https://codelifepicture.oss-cn-beijing.aliyuncs.com/python%E5%9B%BE%E7%89%87%E8%BE%93%E5%87%BA%E5%9B%BE%E5%BA%8A/success.png" alt="图片替换文本" width="500" height="300" align="bottom" />
-
-
       
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2020" class="archive-year">2020</a>
         </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2020/09/24/AutoML_NAS_ResNet/" class="archive-article-date">
+  	<time datetime="2020-09-24T14:59:21.655Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-24</time>
+</a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
+    	 
+        <div class="article-info info-on-right">
+          
+          
 
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/08/19/pythonGUI/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2020/09/24/AutoML_NAS_ResNet/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          (no title)
-        
-      </div>
-    </a>
   
   
-    <a href="/2020/08/19/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -410,8 +209,8 @@ root.mainloop()</code></pre>
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

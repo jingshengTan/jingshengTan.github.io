@@ -8,21 +8,22 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="python GUI制作显示多张图片的界面 受到朋友邀请，需要写一个python GUI，功能是“点击按钮，能显示出某几张图片”。因我以前用tk库制作过一个地图导航界面，因此自我感觉朋友的要求很简单，于是云淡风轻的接受了朋友的请求。但是等操作起来，才发现满满的坑。 我一共使用了两种方法，仅成功了一种，另一种目前无法解决，留待以后思考   点击按钮后生成新界面，在新界面使用Label标签显示图片（失">
+  <meta name="description" content="AutoML、NAS、ResNet综述  参考原文 一文看懂深度学习AutoML和NAShttps:&#x2F;&#x2F;blog.csdn.net&#x2F;jacke121&#x2F;article&#x2F;details&#x2F;97963336 ResNet介绍：https:&#x2F;&#x2F;blog.csdn.net&#x2F;u013181595&#x2F;article&#x2F;details&#x2F;80990930  NAS(Neural Architecture Search)开">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/2020/08/19/pythonGUI/index.html">
+<meta property="og:url" content="http://yoursite.com/2020/09/24/AutoML_NAS_ResNet/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="python GUI制作显示多张图片的界面 受到朋友邀请，需要写一个python GUI，功能是“点击按钮，能显示出某几张图片”。因我以前用tk库制作过一个地图导航界面，因此自我感觉朋友的要求很简单，于是云淡风轻的接受了朋友的请求。但是等操作起来，才发现满满的坑。 我一共使用了两种方法，仅成功了一种，另一种目前无法解决，留待以后思考   点击按钮后生成新界面，在新界面使用Label标签显示图片（失">
+<meta property="og:description" content="AutoML、NAS、ResNet综述  参考原文 一文看懂深度学习AutoML和NAShttps:&#x2F;&#x2F;blog.csdn.net&#x2F;jacke121&#x2F;article&#x2F;details&#x2F;97963336 ResNet介绍：https:&#x2F;&#x2F;blog.csdn.net&#x2F;u013181595&#x2F;article&#x2F;details&#x2F;80990930  NAS(Neural Architecture Search)开">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://codelifepicture.oss-cn-beijing.aliyuncs.com/python%E5%9B%BE%E7%89%87%E8%BE%93%E5%87%BA%E5%9B%BE%E5%BA%8A/second.png">
-<meta property="og:image" content="https://codelifepicture.oss-cn-beijing.aliyuncs.com/python%E5%9B%BE%E7%89%87%E8%BE%93%E5%87%BA%E5%9B%BE%E5%BA%8A/third.png">
-<meta property="og:image" content="https://codelifepicture.oss-cn-beijing.aliyuncs.com/python%E5%9B%BE%E7%89%87%E8%BE%93%E5%87%BA%E5%9B%BE%E5%BA%8A/success.png">
-<meta property="article:published_time" content="2020-08-19T12:59:29.170Z">
-<meta property="article:modified_time" content="2020-09-11T08:34:22.327Z">
+<meta property="og:image" content="https://codelifepicture.oss-cn-beijing.aliyuncs.com/python%E5%9B%BE%E7%89%87%E8%BE%93%E5%87%BA%E5%9B%BE%E5%BA%8A/20190717170221848.png">
+<meta property="og:image" content="https://codelifepicture.oss-cn-beijing.aliyuncs.com/python%E5%9B%BE%E7%89%87%E8%BE%93%E5%87%BA%E5%9B%BE%E5%BA%8A/20180710193536899.png">
+<meta property="og:image" content="https://codelifepicture.oss-cn-beijing.aliyuncs.com/python%E5%9B%BE%E7%89%87%E8%BE%93%E5%87%BA%E5%9B%BE%E5%BA%8A/20180710193619121.png">
+<meta property="og:image" content="https://codelifepicture.oss-cn-beijing.aliyuncs.com/python%E5%9B%BE%E7%89%87%E8%BE%93%E5%87%BA%E5%9B%BE%E5%BA%8A/20180710193652683.png">
+<meta property="article:published_time" content="2020-09-24T14:59:21.655Z">
+<meta property="article:modified_time" content="2020-09-25T03:06:20.105Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://codelifepicture.oss-cn-beijing.aliyuncs.com/python%E5%9B%BE%E7%89%87%E8%BE%93%E5%87%BA%E5%9B%BE%E5%BA%8A/second.png">
+<meta name="twitter:image" content="https://codelifepicture.oss-cn-beijing.aliyuncs.com/python%E5%9B%BE%E7%89%87%E8%BE%93%E5%87%BA%E5%9B%BE%E5%BA%8A/20190717170221848.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -158,98 +159,875 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-pythonGUI" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-AutoML_NAS_ResNet" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="python-GUI制作显示多张图片的界面"><a href="#python-GUI制作显示多张图片的界面" class="headerlink" title="python GUI制作显示多张图片的界面"></a>python GUI制作显示多张图片的界面</h1><hr>
-<p>受到朋友邀请，需要写一个python GUI，功能是“点击按钮，能显示出某几张图片”。因我以前用tk库制作过一个地图导航界面，因此自我感觉朋友的要求很简单，于是云淡风轻的接受了朋友的请求。但是等操作起来，才发现满满的坑。</p>
-<p>我一共使用了两种方法，仅成功了一种，另一种目前无法解决，留待以后思考</p>
+        <h1 id="AutoML、NAS、ResNet综述"><a href="#AutoML、NAS、ResNet综述" class="headerlink" title="AutoML、NAS、ResNet综述"></a>AutoML、NAS、ResNet综述</h1><hr>
 <blockquote>
-<ul>
-<li>点击按钮后生成新界面，在新界面使用Label标签显示图片（失败）</li>
-<li>点击按钮后利用matlab pyplot函数显示图片（成功）</li>
-</ul>
+<p>参考原文</p>
+<p>一文看懂深度学习AutoML和NAS<a target="_blank" rel="noopener" href="https://blog.csdn.net/jacke121/article/details/97963336">https://blog.csdn.net/jacke121/article/details/97963336</a></p>
+<p>ResNet介绍：<a target="_blank" rel="noopener" href="https://blog.csdn.net/u013181595/article/details/80990930">https://blog.csdn.net/u013181595/article/details/80990930</a></p>
 </blockquote>
-<h2 id="一、产生新界面，并用Label显示图片"><a href="#一、产生新界面，并用Label显示图片" class="headerlink" title="一、产生新界面，并用Label显示图片"></a>一、产生新界面，并用Label显示图片</h2><pre><code>由于Label组件仅支持git格式图片，因此需要使用PIL库对图片先进行处理。
-img_open = Image.open(&#39;./xi.jpg&#39;)
-img_png = ImageTk.PhotoImage(img_open)</code></pre>
-<p>全部代码如下：</p>
-<pre><code>import tkinter as tk
-from tkinter import *
-from PIL import Image, ImageTk
-root = tk.Tk()
-root.title(&#39;应用程序窗口&#39;)  # 窗口标题
-root.geometry(&#39;300x200&#39;)  #窗口大小
-img_open = Image.open(&#39;./xi.jpg&#39;)
-img_png = ImageTk.PhotoImage(img_open)
-def sp():
-    root2 = tk.Tk()
-    root2.title(&#39;图片显示窗口&#39;)
-    root2.geometry(&#39;300x200&#39;)
-    label_text = tk.Label(root2, image=img_png)
-    label_text.pack()
-button_img = tk.Button(root, command = sp, text=&#39;带图按钮&#39;)
-button_img.pack()
-mainloop()</code></pre>
-<p>这里有个大坑，图片无法在新的界面显示，目前尚未解决，留待以后解决。上述代码效果如下。</p>
-<p><img src="https://codelifepicture.oss-cn-beijing.aliyuncs.com/python%E5%9B%BE%E7%89%87%E8%BE%93%E5%87%BA%E5%9B%BE%E5%BA%8A/second.png"></p>
-<pre><code>点击按钮后，图片无法显示在新页面，因此我退而求其次，不产生新界面，仅在原界面用Label显示图片
-root = tk.Tk()
-root.title(&#39;应用程序窗口&#39;)  # 窗口标题
-root.geometry(&#39;300x200&#39;)  #窗口大小
-piclist = [&quot;./han.jpg&quot;, &quot;./rose.jpg&quot;]
-pic_num=len(piclist)
-lab_list=[]
-def sp():
-    for i in range(pic_num):
-        img_open = Image.open(piclist[i])
-        img_open = img_open.resize((100, 100), Image.ANTIALIAS)
-        global img_png
-        img_png = ImageTk.PhotoImage(img_open)
-        lab = tk.Label(root,image=img_png)
-        lab_list.append(lab)
-    lab_list[0].grid(rows=2,columns=1)
-    lab_list[1].grid(rows=2,columns=2)
-button_img = tk.Button(root, command = sp, text=&#39;带图按钮&#39;)
-button_img.grid(rows = 1,columns = 1)
-mainloop()</code></pre>
-<p><img src="https://codelifepicture.oss-cn-beijing.aliyuncs.com/python%E5%9B%BE%E7%89%87%E8%BE%93%E5%87%BA%E5%9B%BE%E5%BA%8A/third.png"></p>
-<pre><code>不出意外的出现了坑，第一张图片无法显示，仅能显示第二张，这里猜测是循环过程中img_png参数被改变，导致仅能显示最后一张图片。</code></pre>
-<h2 id="二、利用matlab-pyplot函数显示"><a href="#二、利用matlab-pyplot函数显示" class="headerlink" title="二、利用matlab pyplot函数显示"></a>二、利用matlab pyplot函数显示</h2><p>前面的方法碰壁后，我决定使用matlab库里的pyplot函数显示图片</p>
-<pre><code>import tkinter as tk
-import matplotlib.pyplot as plt
-import matplotlib.image as mping
-from PIL import Image, ImageTk
-root = tk.Tk()
-##设置界面大小
-root.geometry(&#39;300x200&#39;)
+<h2 id="NAS-Neural-Architecture-Search"><a href="#NAS-Neural-Architecture-Search" class="headerlink" title="NAS(Neural Architecture Search)"></a>NAS(Neural Architecture Search)</h2><p>开发神经网络的过程中，架构非常重要，虽然可以直接将其他优秀架构拿来使用，比如说在ImageNet上表现优秀的ResNet直接使用，但是想要在自己训练集上达到最佳效果，还是根据实际情况设计自己的网络架构比较靠谱。</p>
+<p><strong>但是设计出优秀的架构需要非常强的专业知识以及大量的试错</strong>    </p>
+<p><strong>NAS就是为了解决这个问题</strong></p>
+<ul>
+<li>算法的目标<blockquote>
+<p>搜索出最好的神经网络架构。</p>
+</blockquote>
+</li>
+<li>工作流程<blockquote>
+<ol>
+<li>通常从定义一组神经网络可能会用到的“建筑模块”开始。</li>
+<li>接着用一个循环神经网络（RNN）作为控制器，从这些模块中挑选，然后将它们放在一起，来创造出某种端到端的架构。这个架构，通常会呈现出和ResNet、DenseNet等最前沿网络架构一样的风格，但是内部模块的组合和配置有所区别。一个架构的好坏，往往就取决于选择的模块和在它们之间构建的连接。</li>
+<li>接下来，就要训练这个新网络，让它收敛，得到在留出验证集上的准确率。这个准确率随后会用来通过策略梯度更新控制器，让控制器生成架构的水平越来越高。</li>
+</ol>
+</blockquote>
+</li>
+</ul>
+<p>Google Brain的NasNet论文，为图像识别网络总结一些常用模块：<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1707.07012.pdf">Learning Transferable Architectures for Scalable Image Recognition</a></p>
+<p><img src="https://codelifepicture.oss-cn-beijing.aliyuncs.com/python%E5%9B%BE%E7%89%87%E8%BE%93%E5%87%BA%E5%9B%BE%E5%BA%8A/20190717170221848.png" alt="NAS流程图"></p>
+<p>这个过程很直观了。简单来说，很有小朋友搭积木的风范：让一个算法挑出一些积木，然后把它们组装在一起，做成一个神经网络。训练、测试，根据这个结果来调整选积木的标准和组装的方式。这个算法大获成功，NasNet论文展现出非常好的结果，有一部分原因是出于他们做出的限制和假设。</p>
+<p>问题随之而来：<strong>在大型数据集上验证每一种搜索结果很困难</strong></p>
+<p>因此提出假设和限制：<strong>如果一个神经网络能在结构相似的小规模数据集上得到更好的成绩，那么它在更大更复杂的数据集上同样能表现得更好。搜索空间其实很有限。</strong>但是即使这样，对普通用户而言，找一个优秀框架的时间也还是太长。因此提出了新的搜索方式：</p>
+<p><strong>渐进式神经架构搜索（PNAS）</strong>，建议使用名叫“基于序列模型的优化（SMBO）”的策略，来取代NASNet里所用的强化学习。用SMBO策略时，我们不是随机抓起一个模块就试，而是按照复杂性递增的顺序来测试它们并搜索结构。这并不会缩小搜索空间，但确实用更聪明的方法达到了类似的效果。</p>
+<p>论文：<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1712.00559.pdf">Progressive Neural Architecture Search</a></p>
+<p><strong>高效神经架构搜索（ENAS）</strong>,作者假设NAS的计算瓶颈在于，需要把每个模型到收敛，但却只是为了衡量测试精确度，然后所有训练的权重都会丢弃掉。</p>
+<p>论文：<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1802.03268.pdf">Efficient Neural Architecture Search via Parameter Sharing</a></p>
+<p>原理：在研究和实践中已经反复证明，迁移学习有助在短时间内实现高精确度。因为为相似任务训练的神经网络权重相似，迁移学习基本只是神经网络权重的转移。ENAS算法强制将所有模型的权重共享，而非从零开始训练模型到收敛，我们在之前的模型中尝试过的模块都将使用这些学习过的权重。因此，每次训练新模型是都进行迁移学习，收敛速度也更快</p>
+<h2 id="AutoML"><a href="#AutoML" class="headerlink" title="AutoML"></a>AutoML</h2><p>指的是自动机器学习，就谷歌而言，Google提供的Cloud AutoML将这种理念发挥到了极致。只要你上传自己的数据，Google的NAS算法就会为你找到一个架构，用起来又快又简单。<strong>AutoML的理念就是把深度学习里那些复杂的部分都拿出去，你只需要提供数据，随后就让AutoML在神经网络设计上尽情发挥吧。</strong>这样，深度学习就变得像插件一样方便，只要有数据，就能自动创建出由复杂神经网络驱动的决策功能。</p>
+<p>**由于AutoML需要付钱，因此有人构建了<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzIzNjc1NzUzMw==&mid=2247502064&idx=3&sn=526c0eb5f9520ed1584873a5af48b08f&chksm=e8d07f82dfa7f6942c06298653808fa722f3359c0407de492de8a4b0fd0af861f17f1fe35d3f&scene=21#wechat_redirect">AutoKeras</a>**，这是一个使用了ENAS算法的GitHub项目，可以使用pip安装。它是用Keras编写的，因此很容易控制和使用，甚至可以自己深入研究ENAS算法并尝试进行一些改动。</p>
+<p>tensorflow和pytorch也存在一些开源项目使用：</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/melodyguan/enas">https://github.com/melodyguan/enas</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/carpedm20/ENAS-pytorch">https://github.com/carpedm20/ENAS-pytorch</a></p>
+<h2 id="ResNet-Residual-Neural-Network"><a href="#ResNet-Residual-Neural-Network" class="headerlink" title="ResNet(Residual Neural Network)"></a>ResNet(Residual Neural Network)</h2><p>ResNet的主要思想是在网络中增加了直连通道，即Highway Network的思想。此前的网络结构是性能输入做一个非线性变换，而Highway Network则允许保留之前网络层的一定比例的输出。ResNet的思想和Highway Network的思想也非常类似，允许原始输入信息直接传到后面的层中，如下图所示。</p>
+<p><img src="https://codelifepicture.oss-cn-beijing.aliyuncs.com/python%E5%9B%BE%E7%89%87%E8%BE%93%E5%87%BA%E5%9B%BE%E5%BA%8A/20180710193536899.png" alt="残差原理图"></p>
+<p>传统的卷积网络或者全连接网络在信息传递的时候或多或少会存在信息丢失，损耗等问题，同时还有导致梯度消失或者梯度爆炸，导致很深的网络无法训练。ResNet在一定程度上解决了这个问题，通过直接将输入信息绕道传到输出，保护信息的完整性，整个网络<strong>只需要学习输入、输出差别的那一部分，简化学习目标和难度</strong>。VGGNet和ResNet的对比如下图所示。ResNet最大的区别在于有很多的旁路将输入直接连接到后面的层，这种结构也被称为shortcut或者skip connections。</p>
+<p><img src="https://codelifepicture.oss-cn-beijing.aliyuncs.com/python%E5%9B%BE%E7%89%87%E8%BE%93%E5%87%BA%E5%9B%BE%E5%BA%8A/20180710193619121.png"></p>
+<p> ResNet有不同的网络层数，比较常用的是50-layer，101-layer，152-layer。他们都是由上述的残差模块堆叠在一起实现的。<br><img src="https://codelifepicture.oss-cn-beijing.aliyuncs.com/python%E5%9B%BE%E7%89%87%E8%BE%93%E5%87%BA%E5%9B%BE%E5%BA%8A/20180710193652683.png"></p>
+<pre><code>#%%
 
-##下面两行解决figure标题汉字显示问题
-plt.rcParams[&#39;font.sans-serif&#39;]=[&#39;SimHei&#39;]
-plt.rcParams[&#39;axes.unicode_minus&#39;] = False
-def showpicture():
-    ##图片地址
-    pic_names = [r&quot;C:/Users/ASUS/Desktop/训练营/DAY1/day1/han.jpg&quot;,r&quot;C:/Users/ASUS/Desktop/训练营/DAY1/day1/xi.jpg&quot;]
-    for i in range(2):
-        img = mping.imread(pic_names[i])
-        # 由于这里subplot的设置，最多只能显示3行4列共12张图片
-        plt.subplot(3, 4, i + 1)
-        plt.imshow(img)
-        plt.title(&quot;第&quot;+str(i)+&quot;张图片&quot;,fontsize=8)
-        plt.xticks([])
-        plt.yticks([])
-    plt.show()
-a = tk.Label(root,text=&quot;某某系统&quot;,width=10,height=5,font=20)##font调字体width、height调宽高，下面的按钮是类似的
-a.grid(row = 0,column=1) ####这里表示这个标签放在第0行第1列
-b = tk.Button(root,text=&quot;显示图片&quot;,command=showpicture)
-b.grid(row=1,column=1)   ##这里表示这个按钮放在第1行第1列，下面的以此类推
-root.mainloop()</code></pre>
+# Copyright 2016 The TensorFlow Authors. All Rights Reserved.
+
+#
+
+# Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+
+# you may not use this file except in compliance with the License.
+
+# You may obtain a copy of the License at
+
+#
+
+#     http://www.apache.org/licenses/LICENSE-2.0
+
+#
+
+# Unless required by applicable law or agreed to in writing, software
+
+# distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+# See the License for the specific language governing permissions and
+
+# limitations under the License.
+
+# ==============================================================================
+
+&quot;&quot;&quot;
+
+
+
+Typical use:
+
+
+
+   from tensorflow.contrib.slim.nets import resnet_v2
+
+
+
+ResNet-101 for image classification into 1000 classes:
+
+
+
+   # inputs has shape [batch, 224, 224, 3]
+
+   with slim.arg_scope(resnet_v2.resnet_arg_scope(is_training)):
+
+      net, end_points = resnet_v2.resnet_v2_101(inputs, 1000)
+
+
+
+ResNet-101 for semantic segmentation into 21 classes:
+
+
+
+   # inputs has shape [batch, 513, 513, 3]
+
+   with slim.arg_scope(resnet_v2.resnet_arg_scope(is_training)):
+
+      net, end_points = resnet_v2.resnet_v2_101(inputs,
+
+                                                21,
+
+                                                global_pool=False,
+
+                                                output_stride=16)
+
+&quot;&quot;&quot;
+
+import collections
+
+import tensorflow as tf
+
+slim = tf.contrib.slim
+
+
+
+
+
+#namedtuple是一个函数，它用来创建一个自定义的tuple对象，并且规定了tuple元素的个数，
+
+#并可以用属性而不是索引来引用tuple的某个元素
+
+#相当于创建了一个Block类，有scope，unit_fn，args属性
+
+class Block(collections.namedtuple(&#39;Block&#39;, [&#39;scope&#39;, &#39;unit_fn&#39;, &#39;args&#39;])):
+
+  &quot;&quot;&quot;A named tuple describing a ResNet block.
+
+
+
+  Its parts are:
+
+    scope: The scope of the `Block`.
+
+    unit_fn: The ResNet unit function which takes as input a `Tensor` and
+
+      returns another `Tensor` with the output of the ResNet unit.
+
+    args: A list of length equal to the number of units in the `Block`. The list
+
+      contains one (depth, depth_bottleneck, stride) tuple for each unit in the
+
+      block to serve as argument to unit_fn.
+
+  &quot;&quot;&quot;
+
+
+
+
+
+def subsample(inputs, factor, scope=None):
+
+  &quot;&quot;&quot;Subsamples the input along the spatial dimensions.
+
+
+Args:
+
+
+    inputs: A `Tensor` of size [batch, height_in, width_in, channels].
+
+    factor: The subsampling factor.
+
+    scope: Optional variable_scope.
+
+
+
+  Returns:
+
+    output: A `Tensor` of size [batch, height_out, width_out, channels] with the
+
+      input, either intact (if factor == 1) or subsampled (if factor &gt; 1).
+
+  &quot;&quot;&quot;
+
+  if factor == 1:
+
+    return inputs
+
+  else:
+
+    return slim.max_pool2d(inputs, [1, 1], stride=factor, scope=scope)
+
+
+
+
+
+def conv2d_same(inputs, num_outputs, kernel_size, stride, scope=None):
+
+  &quot;&quot;&quot;Strided 2-D convolution with &#39;SAME&#39; padding.
+
+
+
+  When stride &gt; 1, then we do explicit zero-padding, followed by conv2d with
+
+  &#39;VALID&#39; padding.
+
+
+
+  Note that
+
+
+
+     net = conv2d_same(inputs, num_outputs, 3, stride=stride)
+
+
+
+  is equivalent to
+
+
+
+     net = slim.conv2d(inputs, num_outputs, 3, stride=1, padding=&#39;SAME&#39;)
+
+     net = subsample(net, factor=stride)
+
+
+
+  whereas
+
+
+
+     net = slim.conv2d(inputs, num_outputs, 3, stride=stride, padding=&#39;SAME&#39;)
+
+
+
+  is different when the input&#39;s height or width is even, which is why we add the
+
+  current function. For more details, see ResnetUtilsTest.testConv2DSameEven().
+
+
+
+  Args:
+
+    inputs: A 4-D tensor of size [batch, height_in, width_in, channels].
+
+    num_outputs: An integer, the number of output filters.
+
+    kernel_size: An int with the kernel_size of the filters.
+
+    stride: An integer, the output stride.
+
+    rate: An integer, rate for atrous convolution.
+
+    scope: Scope.
+
+
+
+  Returns:</code></pre>
 <hr>
-<pre><code>点击“显示图片“后成功显示两张图片！！！</code></pre>
-<img src="https://codelifepicture.oss-cn-beijing.aliyuncs.com/python%E5%9B%BE%E7%89%87%E8%BE%93%E5%87%BA%E5%9B%BE%E5%BA%8A/success.png" alt="图片替换文本" width="500" height="300" align="bottom" />
+<pre><code>    output: A 4-D tensor of size [batch, height_out, width_out, channels] with
 
+      the convolution output.
+
+  &quot;&quot;&quot;
+
+  #conv2d_same是一个卷积后输入和输出图片大小相同的函数
+
+  #步长为1可以直接卷积，不为1，需要计算在图片周围padding的大小再卷积
+
+  if stride == 1:
+
+    return slim.conv2d(inputs, num_outputs, kernel_size, stride=1,
+
+                       padding=&#39;SAME&#39;, scope=scope)
+
+  else:
+
+    #kernel_size_effective = kernel_size + (kernel_size - 1) * (rate - 1)
+
+    pad_total = kernel_size - 1
+
+    pad_beg = pad_total // 2
+
+    pad_end = pad_total - pad_beg
+
+    inputs = tf.pad(inputs,
+
+                    [[0, 0], [pad_beg, pad_end], [pad_beg, pad_end], [0, 0]])
+
+    return slim.conv2d(inputs, num_outputs, kernel_size, stride=stride,
+
+                       padding=&#39;VALID&#39;, scope=scope)
+
+
+
+
+
+@slim.add_arg_scope
+
+def stack_blocks_dense(net, blocks,
+
+                       outputs_collections=None):
+
+  &quot;&quot;&quot;Stacks ResNet `Blocks` and controls output feature density.
+
+
+
+  First, this function creates scopes for the ResNet in the form of
+
+  &#39;block_name/unit_1&#39;, &#39;block_name/unit_2&#39;, etc.
+
+
+
+
+
+  Args:
+
+    net: A `Tensor` of size [batch, height, width, channels].
+
+    blocks: A list of length equal to the number of ResNet `Blocks`. Each
+
+      element is a ResNet `Block` object describing the units in the `Block`.
+
+    outputs_collections: Collection to add the ResNet block outputs.
+
+
+
+  Returns:
+
+    net: Output tensor 
+
+
+
+  &quot;&quot;&quot;
+
+  #生成残差网络所有的堆叠，并存放在net中
+
+  for block in blocks:
+
+    with tf.variable_scope(block.scope, &#39;block&#39;, [net]) as sc:
+
+      for i, unit in enumerate(block.args):
+
+
+
+        with tf.variable_scope(&#39;unit_%d&#39; % (i + 1), values=[net]):
+
+          unit_depth, unit_depth_bottleneck, unit_stride = unit
+
+          net = block.unit_fn(net,
+
+                              depth=unit_depth,
+
+                              depth_bottleneck=unit_depth_bottleneck,
+
+                              stride=unit_stride)
+
+      net = slim.utils.collect_named_outputs(outputs_collections, sc.name, net)
+
+
+
+  return net
+
+
+
+
+
+def resnet_arg_scope(is_training=True,
+
+                     weight_decay=0.0001,
+
+                     batch_norm_decay=0.997,
+
+                     batch_norm_epsilon=1e-5,
+
+                     batch_norm_scale=True):
+
+  &quot;&quot;&quot;Defines the default ResNet arg scope.
+
+
+
+  TODO(gpapan): The batch-normalization related default values above are
+
+    appropriate for use in conjunction with the reference ResNet models
+
+    released at https://github.com/KaimingHe/deep-residual-networks. When
+
+    training ResNets from scratch, they might need to be tuned.
+
+
+
+  Args:
+
+    is_training: Whether or not we are training the parameters in the batch
+
+      normalization layers of the model.
+
+    weight_decay: The weight decay to use for regularizing the model.
+
+    batch_norm_decay: The moving average decay when estimating layer activation
+
+      statistics in batch normalization.
+
+    batch_norm_epsilon: Small constant to prevent division by zero when
+
+      normalizing activations by their variance in batch normalization.
+
+    batch_norm_scale: If True, uses an explicit `gamma` multiplier to scale the
+
+      activations in the batch normalization layer.
+
+
+
+  Returns:
+
+    An `arg_scope` to use for the resnet models.
+
+  &quot;&quot;&quot;
+
+  batch_norm_params = &#123;
+
+      &#39;is_training&#39;: is_training,
+
+      &#39;decay&#39;: batch_norm_decay,
+
+      &#39;epsilon&#39;: batch_norm_epsilon,
+
+      &#39;scale&#39;: batch_norm_scale,
+
+      &#39;updates_collections&#39;: tf.GraphKeys.UPDATE_OPS,
+
+  &#125;
+
+
+
+  with slim.arg_scope(
+
+      [slim.conv2d],
+
+      weights_regularizer=slim.l2_regularizer(weight_decay),
+
+      weights_initializer=slim.variance_scaling_initializer(),
+
+      activation_fn=tf.nn.relu,
+
+      normalizer_fn=slim.batch_norm,
+
+      normalizer_params=batch_norm_params):
+
+    with slim.arg_scope([slim.batch_norm], **batch_norm_params):
+
+      # The following implies padding=&#39;SAME&#39; for pool1, which makes feature
+
+      # alignment easier for dense prediction tasks. This is also used in
+
+      # https://github.com/facebook/fb.resnet.torch. However the accompanying
+
+      # code of &#39;Deep Residual Learning for Image Recognition&#39; uses
+
+      # padding=&#39;VALID&#39; for pool1. You can switch to that choice by setting
+
+      # slim.arg_scope([slim.max_pool2d], padding=&#39;VALID&#39;).
+
+      with slim.arg_scope([slim.max_pool2d], padding=&#39;SAME&#39;) as arg_sc:
+
+        return arg_sc
+
+
+
+
+
+
+
+
+
+@slim.add_arg_scope
+
+def bottleneck(inputs, depth, depth_bottleneck, stride,
+
+               outputs_collections=None, scope=None):
+
+  &quot;&quot;&quot;Bottleneck residual unit variant with BN before convolutions.
+
+
+
+  This is the full preactivation residual unit variant proposed in [2]. See
+
+  Fig. 1(b) of [2] for its definition. Note that we use here the bottleneck
+
+  variant which has an extra bottleneck layer.
+
+
+
+  When putting together two consecutive ResNet blocks that use this unit, one
+
+  should use stride = 2 in the last unit of the first block.
+
+
+
+  Args:
+
+    inputs: A tensor of size [batch, height, width, channels].
+
+    depth: The depth of the ResNet unit output.
+
+    depth_bottleneck: The depth of the bottleneck layers.
+
+    stride: The ResNet unit&#39;s stride. Determines the amount of downsampling of
+
+      the units output compared to its input.
+
+    rate: An integer, rate for atrous convolution.
+
+    outputs_collections: Collection to add the ResNet unit output.
+
+    scope: Optional variable_scope.
+
+
+
+  Returns:
+
+    The ResNet unit&#39;s output.
+
+  &quot;&quot;&quot;
+
+  with tf.variable_scope(scope, &#39;bottleneck_v2&#39;, [inputs]) as sc:
+
+    depth_in = slim.utils.last_dimension(inputs.get_shape(), min_rank=4)
+
+    preact = slim.batch_norm(inputs, activation_fn=tf.nn.relu, scope=&#39;preact&#39;)
+
+    if depth == depth_in:
+
+      shortcut = subsample(inputs, stride, &#39;shortcut&#39;)
+
+    else:
+
+      shortcut = slim.conv2d(preact, depth, [1, 1], stride=stride,
+
+                             normalizer_fn=None, activation_fn=None,
+
+                             scope=&#39;shortcut&#39;)
+
+
+
+    residual = slim.conv2d(preact, depth_bottleneck, [1, 1], stride=1,
+
+                           scope=&#39;conv1&#39;)
+
+    residual = conv2d_same(residual, depth_bottleneck, 3, stride,
+
+                                        scope=&#39;conv2&#39;)
+
+    residual = slim.conv2d(residual, depth, [1, 1], stride=1,
+
+                           normalizer_fn=None, activation_fn=None,
+
+                           scope=&#39;conv3&#39;)
+
+
+
+    output = shortcut + residual
+
+
+
+    return slim.utils.collect_named_outputs(outputs_collections,
+
+                                            sc.name,
+
+                                            output)
+
+
+
+
+
+def resnet_v2(inputs,
+
+              blocks,
+
+              num_classes=None,
+
+              global_pool=True,
+
+              include_root_block=True,
+
+              reuse=None,
+
+              scope=None):
+
+  &quot;&quot;&quot;Generator for v2 (preactivation) ResNet models.
+
+
+
+  This function generates a family of ResNet v2 models. See the resnet_v2_*()
+
+  methods for specific model instantiations, obtained by selecting different
+
+  block instantiations that produce ResNets of various depths.
+
+
+
+
+
+  Args:
+
+    inputs: A tensor of size [batch, height_in, width_in, channels].
+
+    blocks: A list of length equal to the number of ResNet blocks. Each element
+
+      is a resnet_utils.Block object describing the units in the block.
+
+    num_classes: Number of predicted classes for classification tasks. If None
+
+      we return the features before the logit layer.
+
+    include_root_block: If True, include the initial convolution followed by
+
+      max-pooling, if False excludes it. If excluded, `inputs` should be the
+
+      results of an activation-less convolution.
+
+    reuse: whether or not the network and its variables should be reused. To be
+
+      able to reuse &#39;scope&#39; must be given.
+
+    scope: Optional variable_scope.
+
+
+
+
+
+  Returns:
+
+    net: A rank-4 tensor of size [batch, height_out, width_out, channels_out].
+
+      If global_pool is False, then height_out and width_out are reduced by a
+
+      factor of output_stride compared to the respective height_in and width_in,
+
+      else both height_out and width_out equal one. If num_classes is None, then
+
+      net is the output of the last ResNet block, potentially after global
+
+      average pooling. If num_classes is not None, net contains the pre-softmax
+
+      activations.
+
+    end_points: A dictionary from components of the network to the corresponding
+
+      activation.
+
+
+
+  Raises:
+
+    ValueError: If the target output_stride is not valid.
+
+  &quot;&quot;&quot;
+
+  with tf.variable_scope(scope, &#39;resnet_v2&#39;, [inputs], reuse=reuse) as sc:
+
+    end_points_collection = sc.original_name_scope + &#39;_end_points&#39;
+
+    with slim.arg_scope([slim.conv2d, bottleneck,
+
+                         stack_blocks_dense],
+
+                        outputs_collections=end_points_collection):
+
+      net = inputs
+
+      if include_root_block:
+
+        # We do not include batch normalization or activation functions in conv1
+
+        # because the first ResNet unit will perform these. Cf. Appendix of [2].
+
+        with slim.arg_scope([slim.conv2d],
+
+                            activation_fn=None, normalizer_fn=None):
+
+          net = conv2d_same(net, 64, 7, stride=2, scope=&#39;conv1&#39;)
+
+        net = slim.max_pool2d(net, [3, 3], stride=2, scope=&#39;pool1&#39;)
+
+      net = stack_blocks_dense(net, blocks)
+
+      # This is needed because the pre-activation variant does not have batch
+
+      # normalization or activation functions in the residual unit output. See
+
+      # Appendix of [2].
+
+      net = slim.batch_norm(net, activation_fn=tf.nn.relu, scope=&#39;postnorm&#39;)
+
+      if global_pool:
+
+        # Global average pooling.
+
+        net = tf.reduce_mean(net, [1, 2], name=&#39;pool5&#39;, keep_dims=True)
+
+      if num_classes is not None:
+
+        net = slim.conv2d(net, num_classes, [1, 1], activation_fn=None,
+
+                          normalizer_fn=None, scope=&#39;logits&#39;)
+
+      # Convert end_points_collection into a dictionary of end_points.
+
+      end_points = slim.utils.convert_collection_to_dict(end_points_collection)
+
+      if num_classes is not None:
+
+        end_points[&#39;predictions&#39;] = slim.softmax(net, scope=&#39;predictions&#39;)
+
+      return net, end_points
+
+
+
+
+
+
+
+def resnet_v2_50(inputs,
+
+                 num_classes=None,
+
+                 global_pool=True,
+
+                 reuse=None,
+
+                 scope=&#39;resnet_v2_50&#39;):
+
+  &quot;&quot;&quot;ResNet-50 model of [1]. See resnet_v2() for arg and return description.&quot;&quot;&quot;
+
+  blocks = [
+
+      Block(&#39;block1&#39;, bottleneck, [(256, 64, 1)] * 2 + [(256, 64, 2)]),
+
+      Block(
+
+          &#39;block2&#39;, bottleneck, [(512, 128, 1)] * 3 + [(512, 128, 2)]),
+
+      Block(
+
+          &#39;block3&#39;, bottleneck, [(1024, 256, 1)] * 5 + [(1024, 256, 2)]),
+
+      Block(
+
+          &#39;block4&#39;, bottleneck, [(2048, 512, 1)] * 3)]
+
+  return resnet_v2(inputs, blocks, num_classes, global_pool,
+
+                   include_root_block=True, reuse=reuse, scope=scope)
+
+
+
+
+
+def resnet_v2_101(inputs,
+
+                  num_classes=None,
+
+                  global_pool=True,
+
+                  reuse=None,
+
+                  scope=&#39;resnet_v2_101&#39;):
+
+  &quot;&quot;&quot;ResNet-101 model of [1]. See resnet_v2() for arg and return description.&quot;&quot;&quot;
+
+  blocks = [
+
+      Block(
+
+          &#39;block1&#39;, bottleneck, [(256, 64, 1)] * 2 + [(256, 64, 2)]),
+
+      Block(
+
+          &#39;block2&#39;, bottleneck, [(512, 128, 1)] * 3 + [(512, 128, 2)]),
+
+      Block(
+
+          &#39;block3&#39;, bottleneck, [(1024, 256, 1)] * 22 + [(1024, 256, 2)]),
+
+      Block(
+
+          &#39;block4&#39;, bottleneck, [(2048, 512, 1)] * 3)]
+
+  return resnet_v2(inputs, blocks, num_classes, global_pool,
+
+                   include_root_block=True, reuse=reuse, scope=scope)
+
+
+
+
+
+def resnet_v2_152(inputs,
+
+                  num_classes=None,
+
+                  global_pool=True,
+
+                  reuse=None,
+
+                  scope=&#39;resnet_v2_152&#39;):
+
+  &quot;&quot;&quot;ResNet-152 model of [1]. See resnet_v2() for arg and return description.&quot;&quot;&quot;
+
+  blocks = [
+
+      Block(
+
+          &#39;block1&#39;, bottleneck, [(256, 64, 1)] * 2 + [(256, 64, 2)]),
+
+      Block(
+
+          &#39;block2&#39;, bottleneck, [(512, 128, 1)] * 7 + [(512, 128, 2)]),
+
+      Block(
+
+          &#39;block3&#39;, bottleneck, [(1024, 256, 1)] * 35 + [(1024, 256, 2)]),
+
+      Block(
+
+          &#39;block4&#39;, bottleneck, [(2048, 512, 1)] * 3)]
+
+  return resnet_v2(inputs, blocks, num_classes, global_pool,
+
+                   include_root_block=True, reuse=reuse, scope=scope)
+
+
+
+
+
+def resnet_v2_200(inputs,
+
+                  num_classes=None,
+
+                  global_pool=True,
+
+                  reuse=None,
+
+                  scope=&#39;resnet_v2_200&#39;):
+
+  &quot;&quot;&quot;ResNet-200 model of [2]. See resnet_v2() for arg and return description.&quot;&quot;&quot;
+
+  blocks = [
+
+      Block(
+
+          &#39;block1&#39;, bottleneck, [(256, 64, 1)] * 2 + [(256, 64, 2)]),
+
+      Block(
+
+          &#39;block2&#39;, bottleneck, [(512, 128, 1)] * 23 + [(512, 128, 2)]),
+
+      Block(
+
+          &#39;block3&#39;, bottleneck, [(1024, 256, 1)] * 35 + [(1024, 256, 2)]),
+
+      Block(
+
+          &#39;block4&#39;, bottleneck, [(2048, 512, 1)] * 3)]
+
+  return resnet_v2(inputs, blocks, num_classes, global_pool,
+
+                   include_root_block=True, reuse=reuse, scope=scope)</code></pre>
 
       
 
@@ -329,7 +1107,7 @@ root.mainloop()</code></pre>
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/08/19/pythonGUI/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/09/24/AutoML_NAS_ResNet/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -343,18 +1121,9 @@ root.mainloop()</code></pre>
   
 <nav id="article-nav">
   
-    <a href="/2020/09/24/AutoML_NAS_ResNet/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          (no title)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/08/19/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
+    <a href="/2020/08/19/pythonGUI/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
       <i class="icon-circle-right"></i>
     </a>
   
