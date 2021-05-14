@@ -8,21 +8,25 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="python GUI制作显示多张图片的界面 受到朋友邀请，需要写一个python GUI，功能是“点击按钮，能显示出某几张图片”。因我以前用tk库制作过一个地图导航界面，因此自我感觉朋友的要求很简单，于是云淡风轻的接受了朋友的请求。但是等操作起来，才发现满满的坑。 我一共使用了两种方法，仅成功了一种，另一种目前无法解决，留待以后思考   点击按钮后生成新界面，在新界面使用Label标签显示图片（失">
+  <meta name="description" content="保姆级黄金鸭币(Golduck)买卖教程文章结构 简介 前期准备 购买步骤 读者可能遇到的问题（持续更新）1 简介相信类似比特币这样虚拟货币大家都听说过，最近爆火的狗狗币、shib也引发了一场热潮，不少人从中赚了一笔，甚至实现财富自由。以shib为例，从去年八月发行，到目前为止涨了160万倍，当初买一元现在都价值160万。对普通人而言，我们没有办法预测哪一个币是下一个shib，但可以在众多的币种中">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/2020/08/19/pythonGUI/index.html">
+<meta property="og:url" content="http://yoursite.com/2021/05/14/%E9%87%91%E9%B8%AD%E5%B8%81%E8%B4%AD%E4%B9%B0%E6%95%99%E7%A8%8B/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="python GUI制作显示多张图片的界面 受到朋友邀请，需要写一个python GUI，功能是“点击按钮，能显示出某几张图片”。因我以前用tk库制作过一个地图导航界面，因此自我感觉朋友的要求很简单，于是云淡风轻的接受了朋友的请求。但是等操作起来，才发现满满的坑。 我一共使用了两种方法，仅成功了一种，另一种目前无法解决，留待以后思考   点击按钮后生成新界面，在新界面使用Label标签显示图片（失">
+<meta property="og:description" content="保姆级黄金鸭币(Golduck)买卖教程文章结构 简介 前期准备 购买步骤 读者可能遇到的问题（持续更新）1 简介相信类似比特币这样虚拟货币大家都听说过，最近爆火的狗狗币、shib也引发了一场热潮，不少人从中赚了一笔，甚至实现财富自由。以shib为例，从去年八月发行，到目前为止涨了160万倍，当初买一元现在都价值160万。对普通人而言，我们没有办法预测哪一个币是下一个shib，但可以在众多的币种中">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://codelifepicture.oss-cn-beijing.aliyuncs.com/python%E5%9B%BE%E7%89%87%E8%BE%93%E5%87%BA%E5%9B%BE%E5%BA%8A/second.png">
-<meta property="og:image" content="https://codelifepicture.oss-cn-beijing.aliyuncs.com/python%E5%9B%BE%E7%89%87%E8%BE%93%E5%87%BA%E5%9B%BE%E5%BA%8A/third.png">
-<meta property="og:image" content="https://codelifepicture.oss-cn-beijing.aliyuncs.com/python%E5%9B%BE%E7%89%87%E8%BE%93%E5%87%BA%E5%9B%BE%E5%BA%8A/success.png">
-<meta property="article:published_time" content="2020-08-19T12:59:29.170Z">
-<meta property="article:modified_time" content="2021-05-14T07:46:46.425Z">
+<meta property="og:image" content="https://codelifepicture.oss-cn-beijing.aliyuncs.com/python%E5%9B%BE%E7%89%87%E8%BE%93%E5%87%BA%E5%9B%BE%E5%BA%8A/20210514153449.png">
+<meta property="og:image" content="https://codelifepicture.oss-cn-beijing.aliyuncs.com/python%E5%9B%BE%E7%89%87%E8%BE%93%E5%87%BA%E5%9B%BE%E5%BA%8A/%E5%9B%BE%E7%89%871.png">
+<meta property="og:image" content="https://codelifepicture.oss-cn-beijing.aliyuncs.com/python%E5%9B%BE%E7%89%87%E8%BE%93%E5%87%BA%E5%9B%BE%E5%BA%8A/%E5%9B%BE%E7%89%872.png">
+<meta property="og:image" content="https://codelifepicture.oss-cn-beijing.aliyuncs.com/python%E5%9B%BE%E7%89%87%E8%BE%93%E5%87%BA%E5%9B%BE%E5%BA%8A/%E5%9B%BE%E7%89%873.png">
+<meta property="og:image" content="https://codelifepicture.oss-cn-beijing.aliyuncs.com/python%E5%9B%BE%E7%89%87%E8%BE%93%E5%87%BA%E5%9B%BE%E5%BA%8A/%E5%9B%BE%E7%89%874.png">
+<meta property="og:image" content="https://codelifepicture.oss-cn-beijing.aliyuncs.com/python%E5%9B%BE%E7%89%87%E8%BE%93%E5%87%BA%E5%9B%BE%E5%BA%8A/%E5%9B%BE%E7%89%875.png">
+<meta property="og:image" content="https://codelifepicture.oss-cn-beijing.aliyuncs.com/python%E5%9B%BE%E7%89%87%E8%BE%93%E5%87%BA%E5%9B%BE%E5%BA%8A/%E5%9B%BE%E7%89%876.png">
+<meta property="article:published_time" content="2021-05-14T07:36:38.992Z">
+<meta property="article:modified_time" content="2021-05-14T07:46:52.773Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://codelifepicture.oss-cn-beijing.aliyuncs.com/python%E5%9B%BE%E7%89%87%E8%BE%93%E5%87%BA%E5%9B%BE%E5%BA%8A/second.png">
+<meta name="twitter:image" content="https://codelifepicture.oss-cn-beijing.aliyuncs.com/python%E5%9B%BE%E7%89%87%E8%BE%93%E5%87%BA%E5%9B%BE%E5%BA%8A/20210514153449.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -154,99 +158,76 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-pythonGUI" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-金鸭币购买教程" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="python-GUI制作显示多张图片的界面"><a href="#python-GUI制作显示多张图片的界面" class="headerlink" title="python GUI制作显示多张图片的界面"></a>python GUI制作显示多张图片的界面</h1><hr>
-<p>受到朋友邀请，需要写一个python GUI，功能是“点击按钮，能显示出某几张图片”。因我以前用tk库制作过一个地图导航界面，因此自我感觉朋友的要求很简单，于是云淡风轻的接受了朋友的请求。但是等操作起来，才发现满满的坑。</p>
-<p>我一共使用了两种方法，仅成功了一种，另一种目前无法解决，留待以后思考</p>
-<blockquote>
-<ul>
-<li>点击按钮后生成新界面，在新界面使用Label标签显示图片（失败）</li>
-<li>点击按钮后利用matlab pyplot函数显示图片（成功）</li>
+        <h1 id="保姆级黄金鸭币-Golduck-买卖教程"><a href="#保姆级黄金鸭币-Golduck-买卖教程" class="headerlink" title="保姆级黄金鸭币(Golduck)买卖教程"></a>保姆级黄金鸭币(Golduck)买卖教程</h1><h2 id="文章结构"><a href="#文章结构" class="headerlink" title="文章结构"></a>文章结构</h2><ul>
+<li>简介</li>
+<li>前期准备</li>
+<li>购买步骤</li>
+<li>读者可能遇到的问题（持续更新）<h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1 简介"></a>1 简介</h2>相信类似比特币这样虚拟货币大家都听说过，最近爆火的狗狗币、shib也引发了一场热潮，不少人从中赚了一笔，甚至实现财富自由。以shib为例，从去年八月发行，到目前为止涨了160万倍，当初买一元现在都价值160万。对普通人而言，我们没有办法预测哪一个币是下一个shib，但可以在众多的币种中，选择靠谱、稳定、社区强大的币种购买。这里，我个人推荐投资黄金鸭币（Golduck），黄金鸭币项目稳定，目前处于早期，币价极低，并且有着销毁机制（每一笔交易均会销毁掉一部分币，并奖励所有持币人一部分币），保证了币价的上升，黄金鸭币的潜力可想而知。<a id="more"></a>
+<img src="https://codelifepicture.oss-cn-beijing.aliyuncs.com/python%E5%9B%BE%E7%89%87%E8%BE%93%E5%87%BA%E5%9B%BE%E5%BA%8A/20210514153449.png"></li>
 </ul>
-</blockquote>
-<a id="more"></a>
-<h2 id="一、产生新界面，并用Label显示图片"><a href="#一、产生新界面，并用Label显示图片" class="headerlink" title="一、产生新界面，并用Label显示图片"></a>一、产生新界面，并用Label显示图片</h2><pre><code>由于Label组件仅支持git格式图片，因此需要使用PIL库对图片先进行处理。
-img_open = Image.open(&#39;./xi.jpg&#39;)
-img_png = ImageTk.PhotoImage(img_open)</code></pre>
-<p>全部代码如下：</p>
-<pre><code>import tkinter as tk
-from tkinter import *
-from PIL import Image, ImageTk
-root = tk.Tk()
-root.title(&#39;应用程序窗口&#39;)  # 窗口标题
-root.geometry(&#39;300x200&#39;)  #窗口大小
-img_open = Image.open(&#39;./xi.jpg&#39;)
-img_png = ImageTk.PhotoImage(img_open)
-def sp():
-    root2 = tk.Tk()
-    root2.title(&#39;图片显示窗口&#39;)
-    root2.geometry(&#39;300x200&#39;)
-    label_text = tk.Label(root2, image=img_png)
-    label_text.pack()
-button_img = tk.Button(root, command = sp, text=&#39;带图按钮&#39;)
-button_img.pack()
-mainloop()</code></pre>
-<p>这里有个大坑，图片无法在新的界面显示，目前尚未解决，留待以后解决。上述代码效果如下。</p>
-<p><img src="https://codelifepicture.oss-cn-beijing.aliyuncs.com/python%E5%9B%BE%E7%89%87%E8%BE%93%E5%87%BA%E5%9B%BE%E5%BA%8A/second.png"></p>
-<pre><code>点击按钮后，图片无法显示在新页面，因此我退而求其次，不产生新界面，仅在原界面用Label显示图片
-root = tk.Tk()
-root.title(&#39;应用程序窗口&#39;)  # 窗口标题
-root.geometry(&#39;300x200&#39;)  #窗口大小
-piclist = [&quot;./han.jpg&quot;, &quot;./rose.jpg&quot;]
-pic_num=len(piclist)
-lab_list=[]
-def sp():
-    for i in range(pic_num):
-        img_open = Image.open(piclist[i])
-        img_open = img_open.resize((100, 100), Image.ANTIALIAS)
-        global img_png
-        img_png = ImageTk.PhotoImage(img_open)
-        lab = tk.Label(root,image=img_png)
-        lab_list.append(lab)
-    lab_list[0].grid(rows=2,columns=1)
-    lab_list[1].grid(rows=2,columns=2)
-button_img = tk.Button(root, command = sp, text=&#39;带图按钮&#39;)
-button_img.grid(rows = 1,columns = 1)
-mainloop()</code></pre>
-<p><img src="https://codelifepicture.oss-cn-beijing.aliyuncs.com/python%E5%9B%BE%E7%89%87%E8%BE%93%E5%87%BA%E5%9B%BE%E5%BA%8A/third.png"></p>
-<pre><code>不出意外的出现了坑，第一张图片无法显示，仅能显示第二张，这里猜测是循环过程中img_png参数被改变，导致仅能显示最后一张图片。</code></pre>
-<h2 id="二、利用matlab-pyplot函数显示"><a href="#二、利用matlab-pyplot函数显示" class="headerlink" title="二、利用matlab pyplot函数显示"></a>二、利用matlab pyplot函数显示</h2><p>前面的方法碰壁后，我决定使用matlab库里的pyplot函数显示图片</p>
-<pre><code>import tkinter as tk
-import matplotlib.pyplot as plt
-import matplotlib.image as mping
-from PIL import Image, ImageTk
-root = tk.Tk()
-##设置界面大小
-root.geometry(&#39;300x200&#39;)
-
-##下面两行解决figure标题汉字显示问题
-plt.rcParams[&#39;font.sans-serif&#39;]=[&#39;SimHei&#39;]
-plt.rcParams[&#39;axes.unicode_minus&#39;] = False
-def showpicture():
-    ##图片地址
-    pic_names = [r&quot;C:/Users/ASUS/Desktop/训练营/DAY1/day1/han.jpg&quot;,r&quot;C:/Users/ASUS/Desktop/训练营/DAY1/day1/xi.jpg&quot;]
-    for i in range(2):
-        img = mping.imread(pic_names[i])
-        # 由于这里subplot的设置，最多只能显示3行4列共12张图片
-        plt.subplot(3, 4, i + 1)
-        plt.imshow(img)
-        plt.title(&quot;第&quot;+str(i)+&quot;张图片&quot;,fontsize=8)
-        plt.xticks([])
-        plt.yticks([])
-    plt.show()
-a = tk.Label(root,text=&quot;某某系统&quot;,width=10,height=5,font=20)##font调字体width、height调宽高，下面的按钮是类似的
-a.grid(row = 0,column=1) ####这里表示这个标签放在第0行第1列
-b = tk.Button(root,text=&quot;显示图片&quot;,command=showpicture)
-b.grid(row=1,column=1)   ##这里表示这个按钮放在第1行第1列，下面的以此类推
-root.mainloop()</code></pre>
-<hr>
-<pre><code>点击“显示图片“后成功显示两张图片！！！</code></pre>
-<img src="https://codelifepicture.oss-cn-beijing.aliyuncs.com/python%E5%9B%BE%E7%89%87%E8%BE%93%E5%87%BA%E5%9B%BE%E5%BA%8A/success.png" alt="图片替换文本" width="500" height="300" align="bottom" />
-
+<p>很多人对币圈一知半解，也未曾参与过虚拟货币交易，因此即使想要购买黄金鸭币，也不能操作。因此，本文将为<strong>小白提供保姆级教学</strong>，手把手教会如何购买金鸭币。</p>
+<p>下面，我将以<strong>安卓系统</strong>为例，讲解如何购买黄金鸭币（Golduck）。如果你是从来没有参与过虚拟货币交易，顺着文章阅读；<strong>如果你是老手，你可以跳到3.4：在pancake swap中用bnb换黄金鸭币。</strong></p>
+<h2 id="2-前期准备"><a href="#2-前期准备" class="headerlink" title="2 前期准备"></a>2 前期准备</h2><p>购买金鸭币（Golduck）所需软件：</p>
+<ul>
+<li>Trust Wallet：钱包app，在此钱包中存放你的虚拟货币</li>
+<li>币安交易所：在此交易所中，买卖虚拟货币</li>
+<li>银行app：你自己银行卡所属的app，之后通过它转账</li>
+</ul>
+<p>到官网下载app，币安官网：<a target="_blank" rel="noopener" href="https://www.binancezh.co,trust/">https://www.binancezh.co，Trust</a> Wallet官网：<a target="_blank" rel="noopener" href="https://trustwallet.com.考虑到可能出现地址打不开的情况,可在/">https://trustwallet.com。考虑到可能出现地址打不开的情况，可在</a> <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1WlNLe7UG2_AMTCcEHkTzCg">https://pan.baidu.com/s/1WlNLe7UG2_AMTCcEHkTzCg</a> 中下载软件安装包。提取码是bu9d </p>
+<h2 id="3-购买步骤"><a href="#3-购买步骤" class="headerlink" title="3 购买步骤"></a>3 购买步骤</h2><p>购买金鸭币（Golduck）流程总览：</p>
+<ul>
+<li>分别进入Trust Wallet与币安app创建账号。</li>
+<li>进入币安交易所，使用现金购买bnb(币安币，等会儿用它兑换金鸭币)。</li>
+<li>将币安交易所里的币安币发送到Trust Wallet钱包中。</li>
+<li>在Trust Wallet钱包里使用pancakeswap（一个以币换币平台）将bnb换成金鸭币。</li>
+</ul>
+<h3 id="3-1-创建账号"><a href="#3-1-创建账号" class="headerlink" title="3.1 创建账号"></a>3.1 创建账号</h3><p>安装软件以及注册过程本文略过，跟着软件提示操作即可，<strong>需要注意的是创建钱包时的助记词一定拿笔写下来</strong>，那个页面无法截图，以后忘记密码需靠助记词找回</p>
+<h3 id="3-2-在币安交易所购买币安币"><a href="#3-2-在币安交易所购买币安币" class="headerlink" title="3.2 在币安交易所购买币安币"></a>3.2 在币安交易所购买币安币</h3><p>刚进去可能是简版，我们把简版关掉【如图1、2步】。剩余操作如下：</p>
+<ul>
+<li>【第3步】点击资金–&gt;【4】现货–&gt;【5、6】搜索bnb–&gt;【7】点击bnb–&gt;【8】快捷买币–&gt;【9】选择bnb–&gt;【10】输入购买金额(最好超过500元，之后转移bnb到钱包时有最低限额)–&gt;【11】点击0手续费购买–&gt;【12】选择一种购买方式(例中为银行卡)–&gt;【13】确认购买–&gt;确认订单后点击去付款–&gt;【14】<strong>核对对方姓名和银行卡号！！！别转错了</strong>，再用自己的常用银行app向对方转账–&gt;【15】<strong>在银行app中转账成功后</strong>再点击“我已确认付款”</li>
+</ul>
+<p><img src="https://codelifepicture.oss-cn-beijing.aliyuncs.com/python%E5%9B%BE%E7%89%87%E8%BE%93%E5%87%BA%E5%9B%BE%E5%BA%8A/%E5%9B%BE%E7%89%871.png"></p>
+<p><img src="https://codelifepicture.oss-cn-beijing.aliyuncs.com/python%E5%9B%BE%E7%89%87%E8%BE%93%E5%87%BA%E5%9B%BE%E5%BA%8A/%E5%9B%BE%E7%89%872.png"></p>
+<p>等待卖家确认收款之后，购买的bnb会被存入C2C账户，【15】点击现货，【16】查看bnb余额也果然为0，因此需要将bnb从C2C账户划转到现货账户。操作如下：</p>
+<ul>
+<li>点击现货–&gt;【17】划转–&gt;【18】确认方向为C2C到现货账户–&gt;【19】确认划转的币为bnb–&gt;【20】点击最大–&gt;【21】划转。</li>
+</ul>
+<p><img src="https://codelifepicture.oss-cn-beijing.aliyuncs.com/python%E5%9B%BE%E7%89%87%E8%BE%93%E5%87%BA%E5%9B%BE%E5%BA%8A/%E5%9B%BE%E7%89%873.png"></p>
+<p>操作完成后，就能在现货中看到bnb的余额了！！此时你已经成功了一半！！</p>
+<h2 id="3-3-将bnb-币安币-转移到Trust-Wallet钱包中"><a href="#3-3-将bnb-币安币-转移到Trust-Wallet钱包中" class="headerlink" title="3.3 将bnb(币安币)转移到Trust Wallet钱包中"></a>3.3 将bnb(币安币)转移到Trust Wallet钱包中</h2><p>由于金鸭币需要在Trust Wallet中购买，因此下面我们需要将币安app中的bnb发送到钱包中。钱包实际上是一串地址，因此实际上我们是将bnb发送到那串地址上。操作如下：</p>
+<ul>
+<li>打开Trust Wallet–&gt;【23】右上角搜索Smart Chain，将Smart Chain添加–&gt;【24】添加成功后点击Smart Chain–&gt;【25】点击复制–&gt;【26】打开币安app，在现货中点击BNB–&gt;【27】进入后点击提现–&gt;【28】黏贴刚刚复制好的地址，并选择提现数目后点击提现。</li>
+</ul>
+<p>（提现的意思就是将交易所里的币提现到另一个地址里面去，笔者写文章的时候，处于系统繁忙期，无法提现。读者操作到这一步也需注意，最低提现额度为0.1个bnb，大概是420元，因此前面充值一定要冲够）</p>
+<p><img src="https://codelifepicture.oss-cn-beijing.aliyuncs.com/python%E5%9B%BE%E7%89%87%E8%BE%93%E5%87%BA%E5%9B%BE%E5%BA%8A/%E5%9B%BE%E7%89%874.png"></p>
+<h2 id="3-4-在pancake-swap中用bnb换金鸭币"><a href="#3-4-在pancake-swap中用bnb换金鸭币" class="headerlink" title="3.4 在pancake swap中用bnb换金鸭币"></a>3.4 在pancake swap中用bnb换金鸭币</h2><p>当bnb发送到钱包中以后，我们就可以用钱包中的bnb兑换金鸭币了，和第23步相同，点击搜索栏，在搜索栏中输入<strong>金鸭币的合约地址0x1a1c6f9F6B4E535130E9b1de46bBc76130b61Feb</strong>，将金鸭币添加到我们的钱包中。接下来就可以去兑换金鸭币了！</p>
+<ul>
+<li>【30】点击DAPP–&gt;【31】下滑找到PancakeSwap–&gt;【32】进入后点击右上方选择smart chain–&gt;【33】点击connect连接Trust Wallet钱包–&gt;【34】如果没有出现图中界面则点击34处，选择Trade目录下的Exchange</li>
+</ul>
+<p><img src="https://codelifepicture.oss-cn-beijing.aliyuncs.com/python%E5%9B%BE%E7%89%87%E8%BE%93%E5%87%BA%E5%9B%BE%E5%BA%8A/%E5%9B%BE%E7%89%875.png"></p>
+<p>此时已经配置好网络且连接上你的钱包了，下面使用交换功能，以币换币。操作步骤：</p>
+<ul>
+<li>【35】设置滑点为11%（防止交易失败，入下图最右边所示）–&gt;【36】复制合约地址找到金鸭币(Golduck)–&gt;【37】设置兑换数目–&gt;【38】确认交易–&gt;之后回到钱包主页面等待交易成功就可以了</li>
+</ul>
+<p><img src="https://codelifepicture.oss-cn-beijing.aliyuncs.com/python%E5%9B%BE%E7%89%87%E8%BE%93%E5%87%BA%E5%9B%BE%E5%BA%8A/%E5%9B%BE%E7%89%876.png"></p>
+<h2 id="4-可能存在的问题（持续更新）"><a href="#4-可能存在的问题（持续更新）" class="headerlink" title="4 可能存在的问题（持续更新）"></a>4 可能存在的问题（持续更新）</h2><h3 id="4-1-如何查看金鸭币的价格，以及收益"><a href="#4-1-如何查看金鸭币的价格，以及收益" class="headerlink" title="4.1 如何查看金鸭币的价格，以及收益"></a>4.1 如何查看金鸭币的价格，以及收益</h3><p>在Trust Wallet钱包首页即可查看你有多少金鸭币，以及当天的收益。更详细的资料可以到<a target="_blank" rel="noopener" href="https://coinmarketcap.com/">https://coinmarketcap.com/</a>中搜索Golduck查看</p>
+<h3 id="4-2-如何卖掉金鸭币"><a href="#4-2-如何卖掉金鸭币" class="headerlink" title="4.2 如何卖掉金鸭币"></a>4.2 如何卖掉金鸭币</h3><p>将之前的操作反向执行即可，即：<br>1.在pancake swap中用金鸭币换成bnb </p>
+<ol start="2">
+<li>将bnb发送到币安交易所bnb的地址里 </li>
+<li>在第8步所示的页面里，点击“快捷买币”之后，在新页面上方选择“我要卖”即可，</li>
+</ol>
+<h3 id="4-3-一定要使用bnb兑换金鸭币吗"><a href="#4-3-一定要使用bnb兑换金鸭币吗" class="headerlink" title="4.3 一定要使用bnb兑换金鸭币吗"></a>4.3 一定要使用bnb兑换金鸭币吗</h3><p>也可以用USDT这样的法币，但需要注意的是：1、一定要提现到Trust Wallet中属于<strong>ERC20的USDT的地址中</strong>，选择TRC20将无法兑换金鸭币，2、<strong>兑换金鸭币时需用bnb作为手续费</strong>，因此钱包中仍需要有bnb存在。</p>
+<h3 id="4-4-买金鸭币太麻烦了，有没有快的方法"><a href="#4-4-买金鸭币太麻烦了，有没有快的方法" class="headerlink" title="4.4 买金鸭币太麻烦了，有没有快的方法"></a>4.4 买金鸭币太麻烦了，有没有快的方法</h3><p>目前金鸭币上线了latoken交易所，在该交易所中买卖金鸭币较为方便，但需要FQ（怕和谐，没办法）。很快金鸭币将上线抹茶等交易所，无需翻墙也可直接在交易所中买卖金鸭币。</p>
+<p>现在上车，等到上所得时候不知道都翻了多少倍了。</p>
+<h3 id="4-5-为什么在钱包中金鸭币的数目在增加-跳动"><a href="#4-5-为什么在钱包中金鸭币的数目在增加-跳动" class="headerlink" title="4.5 为什么在钱包中金鸭币的数目在增加/跳动"></a>4.5 为什么在钱包中金鸭币的数目在增加/跳动</h3><p>因为金鸭币采用持币即挖矿机制，持有金鸭币就等于在挖金鸭币。同时，独特的销毁机制，使得当每次有人发起了金鸭币交易，参与交易的金鸭币会销毁一部分，并将一部分奖励所有持币人。所以金鸭币就不断的在增加了！这简直就是会下金蛋的鸭子！！！</p>
+<h3 id="4-6-做这份教程是为了骗人割韭菜吗"><a href="#4-6-做这份教程是为了骗人割韭菜吗" class="headerlink" title="4.6 做这份教程是为了骗人割韭菜吗"></a>4.6 做这份教程是为了骗人割韭菜吗</h3><p>从图中能看到，本人持有的金鸭币不多，前前后后投入了1500左右，图中能看到现在是650美元，差不多翻倍了，但其实也不多。</p>
+<p>愿意做这个教程是因为现在金鸭币处于孵化阶段，我们社区的人都在为鸭币崛起而出力，这种感觉非常棒。这和投资狗狗币、shib不一样，我们将参与孵化这只鸭鸭，最终给我们带来金蛋的回报！！</p>
+<h3 id="4-7-苹果用户如何下载软件"><a href="#4-7-苹果用户如何下载软件" class="headerlink" title="4.7 苹果用户如何下载软件"></a>4.7 苹果用户如何下载软件</h3><p>点击<a target="_blank" rel="noopener" href="https://www.yeljl9.com/ME2LM99">链接</a>下载app，科–学–上–网，去上面提到的软件的官网链接下载。</p>
 
       
 
@@ -326,7 +307,7 @@ root.mainloop()</code></pre>
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/08/19/pythonGUI/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2021/05/14/%E9%87%91%E9%B8%AD%E5%B8%81%E8%B4%AD%E4%B9%B0%E6%95%99%E7%A8%8B/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -340,15 +321,11 @@ root.mainloop()</code></pre>
   
 <nav id="article-nav">
   
-    <a href="/2020/09/24/AutoML_NAS_ResNet/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          (no title)
-        
-      </div>
-    </a>
   
+    <a href="/2020/09/24/AutoML_NAS_ResNet/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
